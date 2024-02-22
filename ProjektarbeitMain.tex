@@ -1,0 +1,169 @@
+% Def. Dokumententyp
+\documentclass[ngerman, a4paper, 12pt, oneside]{article}
+% Def. Dokumententyp
+
+\setlength{\columnsep}{10mm}
+%Standard-Packages
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage[left=3cm, right=2cm, top=2.5cm, bottom=2cm]{geometry}
+\usepackage{color}
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{blindtext}
+\usepackage{lmodern}
+\usepackage{caption}
+\usepackage{pdflscape}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{mathptmx}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[absolute]{textpos}
+\usepackage{bibgerm}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{eurosym}
+\usepackage{filecontents}
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage{subcaption}
+\captionsetup[subfigure]{ font=normal, labelfont=bf, labelformat=brace, position=top}
+\usepackage{colortbl}
+\usepackage[justification=centering]{caption}
+\usepackage{pdfpages}
+\usepackage[hidelinks]{hyperref}
+\usepackage{multicol}
+\usepackage{wrapfig}
+
+%%WORTTRENNUNG
+\hyphenation{Bei-spiel-tren-nung}
+
+%%Querverweis Anhang
+\newcounter{mylabelcounter}
+\makeatletter
+\newcommand{\labelText}[2]{%
+#1\refstepcounter{mylabelcounter}%
+\immediate\write\@auxout{%
+  \string\newlabel{#2}{{1}{\thepage}{{\unexpanded{#1}}}{mylabelcounter.\number\value{mylabelcounter}}{}}%
+}%
+}
+\makeatother
+%%Querverweis Anhang
+
+%%Abkuerzungsverzeichnis
+\usepackage[]{acronym}
+%%Abkuerzungsverzeichnis
+
+%Seitenlayout
+\pagestyle{fancy}
+
+\lhead{\nouppercase\leftmark}
+\chead{} 
+\rhead[\leftmark]{\thepage}
+
+\lfoot{}
+\cfoot{}
+\rfoot{}
+
+\renewcommand{\headrulewidth}{0.4pt}
+
+%Seitenlayout
+
+%Absätze nicht einrücken
+\setlength{\parindent}{0pt}
+%Absätze nicht einrücken
+\setstretch{1.5}
+
+\begin{document}
+
+\pagestyle{empty}
+\begin{singlespace}
+%Hier kannst du auswählen, ob du die Titelseite für eine Projekt- oder Abschlussarbeit vorbereitet haben willst
+\include{Titelseite_Abschlussarbeit}
+\end{singlespace}
+
+
+
+\pagenumbering{Roman}
+
+\input{Erklaerung_Abschlussarbeit}
+
+\newpage
+
+\input{Zusammenfassung}
+
+\newpage
+\pagenumbering {Roman}
+\pagestyle{plain}
+\newpage
+\setcounter{page}{4} %SEITENNUMMER EINSTELLEN
+
+\begin{singlespace}
+\vspace{10mm}
+\phantomsection\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+\LARGE{\textbf{Abkürzungsverzeichnis}}
+\normalsize{\input{acronym}}
+\end{singlespace}
+
+\cleardoublepage
+
+\pagenumbering{gobble}
+\begin{singlespace}
+\renewcommand{\contentsname}{Inhaltsverzeichnis}
+\tableofcontents
+\end{singlespace}
+\cleardoublepage
+
+\pagestyle{plain}
+
+%Beginn Hauptteil
+
+\pagenumbering {arabic}
+\pagestyle{fancy}
+\renewcommand{\figurename}{Abb.}
+
+\newpage
+\input{Einfuehrung}
+
+\newpage
+\section{Grundlagen}
+
+
+%Ende Hauptteil
+
+\newpage
+\pagestyle{plain}
+\pagenumbering {Roman}
+
+\begin{singlespace}
+\newpage
+\setcounter{page}{6}
+\phantomsection\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+\renewcommand{\listfigurename}{Abbildungsverzeichnis}
+\listoffigures
+\end{singlespace}
+
+\begin{singlespace}
+\phantomsection\addcontentsline{toc}{section}{Tabellenverzeichnis}
+\renewcommand{\listtablename}{Tabellenverzeichnis}
+\listoftables
+\clearpage
+\end{singlespace}
+
+
+\newpage
+\bibliographystyle{abbrvdin}
+\phantomsection\addcontentsline{toc}{section}{Literaturverzeichnis}
+\renewcommand{\refname}{Literaturverzeichnis}
+\bibliography{Literaturverzeichnis}
+\newpage
+\input{Anhang} 
+
+\end{document}

@@ -1,0 +1,91 @@
+\section{Einführung}
+\label{kap:Einfuehrung}
+
+
+%So ruft man Unterkapitel auf (Bestenfalls für jedes Unterkapitel eine eigene Datei anlegen)
+\input{Zielsetzung}
+
+\newpage
+\subsection{Was kann man mit \LaTeX{} machen?}
+
+\par So kann man eine Abkürzung verwenden: \ac{Bsp}
+
+\large{Erklärung zu Tabellen:}\\
+\normalsize
+
+\begin{table}[H]
+\centering
+\caption{Beispieltabelle.}
+\label{tab:Beispieltabelle}
+\begin{tabular}{ll}
+\textbf{Beispiel}                      & Beispiel                      \\ \cline{2-2} 
+\multicolumn{1}{l|}{Beispiel} & \multicolumn{1}{l|}{Beispiel} \\ \cline{2-2} 
+\end{tabular}
+\end{table}
+
+So kann man auf \autoref{tab:Beispieltabelle} verweisen.\\
+Tabelleneditor: \url{https://www.tablesgenerator.com/}\\
+
+
+
+\Huge{\textit{So fügt man Formeln ein:}}\\
+\normalsize
+Formeleditor: \url{https://www.zahlen-kern.de/editor/}\\
+Formeln im Fließtext: Die kinetische Energie berechnet sich wie folgt: $E_{kin} = \frac{1}{2} \cdot m \cdot v^{2}$ Die Einheit der Energie ist \textit{Joule}.
+
+Formeln mit Numerierung:
+
+\textbf{Übertragungsfunktion}:\\
+\begin{equation}
+G(s) = \frac{ y(s) }{ u(s) } = \frac{ b_{n}s^{n} + b_{n-1}s^{n-1} + \dots + b_{1}s + b_0 }{ 1s^n + a_{n-1}s^{n-1} + a_{n-2}s^{n-1} + \dots + a_{1}s+ a_0} = \frac{ Zähler }{Nenner}
+\label{eq:Uebertragungsfunktion}
+\end{equation}
+
+\begin{equation}
+    \begin{split}
+        E_{kin} &= \frac{1}{2} \cdot m \cdot v^{2} \cr
+        &= \frac{1}{2} \cdot 2\,kg \cdot (10\,\frac{m}{s})^{2} \cr
+        &= 100\,J
+    \end{split}
+    \label{eq:Mehrzeilige_Gleichung}
+\end{equation}
+
+
+\newpage
+\large{\textbf{Abbildungen macht man so:}}\\
+\normalsize
+
+\begin{figure}[H]
+		\centering
+        \includegraphics[width=40mm]{images/Quadrat.png}
+        \caption{Hier ein wunderschönes Logo.}
+        \label{abb:Panther}
+\end{figure}
+
+So kann man auf \autoref{abb:Panther} verweisen.\\
+
+So kann man Literatur zitieren: \cite{Beispiel} \\
+
+So verweist man auf den \nameref{label:Anhang}.
+
+
+\newpage 
+So springt man auf eine neue Seite und fügt ein Bild im Fließtext ein.\\
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
+
+\begin{wrapfigure}{r}{45mm}
+  \begin{center}
+        \includegraphics[width=30mm]{images/Quadrat.png}
+        \caption{Hier ein wunderschönes und rechtsbündiges Logo.}
+        \label{abb:Panther2}
+\end{center}
+\end{wrapfigure}
+
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
+
+Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   
+
+Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.     
